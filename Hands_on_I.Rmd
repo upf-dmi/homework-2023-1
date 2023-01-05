@@ -1,0 +1,189 @@
+---
+title: "Hands_on_sessions_1_2_3"
+author: "Janet Piñero (janet.pinero@upf.edu)"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`"      
+output:
+  html_document:
+    toc: true
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Pima indians diabetes dataset 
+
+Load the Pima indians diabetes dataset (Smith et al, 1988) from the mlbench package. 
+
+Find the description of the dataset and classify the attributes according to their type
+
+```{r}
+
+
+```
+
+What is the average age of the people in the study?
+
+```{r}
+ 
+
+```
+
+How many cases and controls are there in the study? 
+```{r}
+ 
+
+```
+
+Are there missing values in the dataset? 
+
+```{r}
+
+
+
+```
+
+Which variables/features include outliers? How did you detected them?
+
+```{r}
+
+```
+
+Perform imputation on missing data. Justify your choices
+
+```{r}
+
+```
+
+
+From the Pima indians dataset, and visualization hands on,  plot using ggplot2:
+Do not use the colors by default from ggplot2!! Add the plot titles. 
+
+The density plot of Pregnancies Grouped by outcome (in this case, outcome refers to presence of diabetes)
+```{r}
+
+```
+
+The density plot of glucose by presence outcome, and next to it, the boxplot of glucose by outcome 
+```{r}
+
+```
+
+The relationship between glucose and insulin levels colored by outcome
+```{r}
+
+```
+
+The relationship between the  Skinfold thickness of the triceps and the BMI, using one panel for each outcome
+```{r}
+
+```
+
+
+# 2. Worcester Heart Attack Study 
+
+Load the whas.csv dataset in the data folder, from the Worcester Heart Attack Study (Saczynski et al, 2008).
+
+```{r}
+
+
+```
+
+What is the average length of stay in the hospital	
+
+```{r}
+
+```
+
+What is the average length of the follow up?
+
+```{r}
+
+
+```
+
+Plot the distribution of the age by gender. Is there any trend? What is the best way to visualize this?** 
+
+```{r}
+
+```
+
+
+# 3  A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke
+The dataset trial_stroke in the data folder has been simulated to reproduce the results of the following publication
+https://www.nejm.org/doi/full/10.1056/NEJMoa1411587
+
+ http://www.nejm.org/doi/full/10.1056/NEJMoa1411587.
+
+Variable |	Description
+----------: | -----------------------------------------
+`studyid` |	Study ID # (z001 through z500)
+`trt`	| Treatment group (Intervention or Control)
+`age`	| Age in years
+`sex`	| Male or Female
+`nihss`	| NIH Stroke Scale Score (can range from 0-42; higher scores indicate more severe neurological deficits)
+`location` |	Stroke Location - Left or Right Hemisphere
+`hx.isch`	| History of Ischemic Stroke (Yes/No)
+`afib`	| Atrial Fibrillation (1 = Yes, 0 = No)
+`dm`	| Diabetes Mellitus (1 = Yes, 0 = No)
+`mrankin` |	Pre-stroke modified Rankin scale score (0, 1, 2 or > 2) indicating functional disability - complete range is 0 (no symptoms) to 6 (death)
+`sbp`	| Systolic blood pressure, in mm Hg
+`iv.altep`	| Treatment with IV alteplase (Yes/No)
+`time.iv`	| Time from stroke onset to start of IV alteplase (minutes) if iv.altep=Yes
+`aspects`	| Alberta Stroke Program Early Computed Tomography score, which measures extent of stroke from 0 - 10; higher scores indicate fewer early ischemic changes
+`ia.occlus`	| Intracranial arterial occlusion, based on vessel imaging - five categories^[The five categories are Intracranial ICA, ICA with involvement of the M1 middle cerebral artery segment, M1 middle cerebral artery segment, M2 middle cerebral artery segment, A1 or A2 anterior cerebral artery segment]
+`extra.ica`	| Extracranial ICA occlusion (1 = Yes, 0 = No)
+`time.rand`	| Time from stroke onset to study randomization, in minutes
+`time.punc`	| Time from stroke onset to groin puncture, in minutes (only if Intervention)
+
+
+```{r  }
+
+```
+
+## 3.1 Reproduce table 1 from the publication
+Hint: use the [tableone](https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html) R package
+
+# 3 the Heart Disease Dataset 
+Load the data from
+[here](https://raw.githubusercontent.com/jpinero/DMI_2021/main/datasets/heart_disease_dataset.csv), and the description is [here](https://raw.githubusercontent.com/jpinero/DMI_2021/main/datasets/heart_disease_description.txt).
+
+Perform an EDA on the data
+```{r}
+
+```
+
+
+# 5 The Hiiragi et al, 2013 gene expression microarray dataset
+
+From a dataset of a gene expression microarray (an Affymetrix mouse4302 array) that reports the transcriptomes of around 100 individual cells from mouse embryos at different time points in early development, from the paper of Ohnishi et al. (2014). More details can be found in the paper and in the documentation of the [Bioconductor data package Hiiragi2013](http://bioconductor.org/packages/release/data/experiment/html/Hiiragi2013.html). 
+In the paper the authors divided the cells into 8 biological groups (sampleGroup), based on age, genotype and lineage, and they defined a color scheme to represent these groups (sampleColour).  Plot the number of samples for each of the 8 groups using the ggplot function, coloring by the original colors
+```{r}
+
+```
+
+Plot the relationship between probes  X1426642_at, and X1418765_at. Color the samples by group, and add labels to the points
+
+```{r}
+
+```
+
+Plot the distribution of of probe intensities for one particular sample, cell number 20, which was from day E3.25
+```{r}
+
+```
+
+For the probes Fgf4 = "1420085_at", Gata4 = "1418863_at",  Gata6 = "1425463_at",  and Sox2 = "1416967_at", plot
+a barplot of the mean of the expression values across all experiments (* add the error bar to the plot)
+*Explore boxplots, violin plots and density plots of the levels of expression of the selected probes across all samples
+
+```{r}
+
+```
+
+# session info {.unnumbered}
+
+```{r, results='asis',  echo=FALSE, message=FALSE }
+sessionInfo()
+```
